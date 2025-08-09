@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kiwi Quest</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      /* New "float and fade" Zzz animation */
+      @keyframes zzz-float {
+        0% {
+          opacity: 0.9;
+          transform: translateY(0);
+        }
+        100% {
+          opacity: 0;
+          transform: translateY(-40px);
+        }
+      }
+      .animate-zzz {
+        animation: zzz-float 2.5s ease-out infinite;
+      }
+
+      /* Custom animation for kiwi legs */
+      @keyframes walk-leg-1 {
+        0%, 100% { transform: rotate(-25deg); }
+        50% { transform: rotate(25deg); }
+      }
+      @keyframes walk-leg-2 {
+        0%, 100% { transform: rotate(25deg); }
+        50% { transform: rotate(-25deg); }
+      }
+      .animate-walk-1 {
+        animation: walk-leg-1 0.8s ease-in-out infinite;
+        transform-origin: 50% 0;
+      }
+      .animate-walk-2 {
+        animation: walk-leg-2 0.8s ease-in-out infinite;
+        transform-origin: 50% 0;
+      }
+      
+      /* New, more evident animation for rank-up - tilt removed */
+      @keyframes new-rank-up {
+        0% {
+          transform: scale(0.9) translateY(10px);
+          opacity: 0;
+        }
+        30% {
+          transform: scale(1.2);
+          opacity: 1;
+          filter: drop-shadow(0 0 10px rgba(255, 255, 150, 0.8));
+        }
+        50% {
+          transform: scale(1.1);
+          filter: drop-shadow(0 0 15px rgba(255, 255, 255, 1));
+        }
+        80% {
+          transform: scale(1.15);
+          filter: drop-shadow(0 0 12px rgba(255, 255, 150, 0.9));
+        }
+        100% {
+          transform: scale(1);
+          opacity: 1;
+          filter: none;
+        }
+      }
+      .animate-new-rank-up {
+        animation: new-rank-up 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      }
+    </style>
+
+<link rel="stylesheet" href="/index.css">
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.1.1",
+    "react-dom/": "https://esm.sh/react-dom@^19.1.1/",
+    "react/": "https://esm.sh/react@^19.1.1/"
+  }
+}
+</script>
+  <script type="module" crossorigin src="/kiwi-game/assets/index-BxMF2n_k.js"></script>
+</head>
+  <body class="bg-gray-900">
+    <div id="root"></div>
+  </body>
+</html>
